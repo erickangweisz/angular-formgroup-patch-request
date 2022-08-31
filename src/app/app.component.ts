@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AppComponent {
   public formGroup: FormGroup;
-  public valuesChanged: Array<any> = [];
+  public objectPatched: Object;
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -25,7 +25,9 @@ export class AppComponent {
   }
 
   public onSubmit() {
-    this.valuesChanged = [];
+    // this.valuesChanged = [];
+    this.objectPatched = {};
+
     // Iteramos los controles del formulario
     Object.keys(this.formGroup.controls).map((key: string) => {
       // Creamos un objeto con la propiedad changed para saber si el control ha sido modificado
@@ -36,11 +38,11 @@ export class AppComponent {
 
       // comprobamos si el control ha sido modificado, y si es así, hacemos push en el array
       if (parsedValue.changed) {
-        this.valuesChanged.push({ [key]: this.formGroup.get(key).value });
+        this.objectPatched[key] = this.formGroup.get(key).value;
       }
     });
 
     // En este punto ya tendríamos el objeto sólo con los valores modificados con el que hacer una petición patch
-    console.log('patch request here!', this.valuesChanged);
+    console.log('patch request here!', this.objectPatched);
   }
 }
