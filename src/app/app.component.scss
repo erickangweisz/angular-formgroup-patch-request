@@ -1,0 +1,62 @@
+body {
+  font-family: proxima-nova, 'Roboto', 'Open Sans', sans-serif, 'Raleway';
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.body-container {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.main-content {
+  margin: 55px 88px;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 64px;
+  font-family: 'Saira', 'Roboto', 'Open Sans', sans-serif, 'Raleway';
+  font-weight: 700 !important;
+}
+
+label {
+  display: block;
+  font-family: proxima-nova-condensed;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  margin-top: 10px;
+}
+
+button {
+  height: 40px;
+  width: 220px;
+  margin-top: 36px;
+  border-style: none;
+  box-shadow: 1px 6px 9px 7px rgba(25, 38, 44, 0.16);
+  font-family: proxima-nova;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.1px;
+  line-height: 24px;
+  text-align: center;
+  outline-style: none;
+  cursor: pointer;
+
+  &.square {
+    border-radius: 5px;
+  }
+
+  &.rounded {
+    border-radius: 24px;
+  }
+}
+
+.next {
+  height: 40px;
+  width: 96px;
+}

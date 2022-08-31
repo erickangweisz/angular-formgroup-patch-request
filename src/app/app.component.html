@@ -1,0 +1,29 @@
+<div class="body-container">
+  <form [formGroup]="formGroup" class="form">
+    <div class="wrapper">
+      <div class="main-content">
+        <h1>Patch Request example</h1>
+
+        <label for="username">username</label>
+        <input formControlName="username" placeholder="Enter username" />
+
+        <label for="fullname">fullname</label>
+        <input formControlName="fullname" placeholder="Enter fullname" />
+
+        <label for="email">Email</label>
+        <input formControlName="email" placeholder="Enter email" />
+
+        <br />
+        <button (click)="onSubmit()" class="next square" name="button">
+          submit
+        </button>
+      </div>
+    </div>
+
+    <hr />
+
+    <div style="margin-left: 20px">
+      {{ valuesChanged | json }}
+    </div>
+  </form>
+</div>
