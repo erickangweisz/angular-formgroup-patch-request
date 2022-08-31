@@ -27,7 +27,7 @@ export class AppComponent {
   public onSubmit() {
     this.valuesChanged = [];
     // Iteramos los controles del formulario
-    Object.keys(this.formGroup.controls).map((key) => {
+    Object.keys(this.formGroup.controls).map((key: string) => {
       // Creamos un objeto con la propiedad changed para saber si el control ha sido modificado
       const parsedValue = {
         [key]: this.formGroup.get(key).value, // key representa el nombre del control iterado
@@ -40,6 +40,7 @@ export class AppComponent {
       }
     });
 
-    console.log('patch request!', this.valuesChanged);
+    // En este punto ya tendríamos el objeto sólo con los valores modificados con el que hacer una petición patch
+    console.log('patch request here!', this.valuesChanged);
   }
 }
