@@ -34,7 +34,7 @@ export class AppComponent {
         changed: this.formGroup.get(key).dirty, // con esta línea identificamos que el control ha sido modificado
       };
 
-      // comprobamos si el control ha sido cambiado, y si es así, hacemos push en el array
+      // comprobamos si el control ha sido modificado, y si es así, hacemos push en el array
       if (parsedValue.changed) {
         this.valuesChanged.push({ [key]: this.formGroup.get(key).value });
       }
