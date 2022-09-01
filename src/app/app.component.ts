@@ -25,7 +25,6 @@ export class AppComponent {
   }
 
   public onSubmit() {
-    // this.valuesChanged = [];
     this.objectPatched = {};
 
     // Iteramos los controles del formulario
@@ -44,5 +43,8 @@ export class AppComponent {
 
     // En este punto ya tendríamos el objeto sólo con los valores modificados con el que hacer una petición patch
     console.log('patch request here!', this.objectPatched);
+
+    // Por último marcamos los controles del formulario a limpio
+    this.formGroup.markAsPristine();
   }
 }
